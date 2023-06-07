@@ -1,0 +1,9 @@
+/*
+ * Copyright 2023 tridiumuniversity, All Rights Reserved.
+ */
+/* Environment Configuration File */
+
+// TODO: Change the below values to match your development environment
+gradle.ext.niagara_dev_home = ""
+gradle.ext.niagara_home = ""
+gradle.ext.niagara_user_home = ""
