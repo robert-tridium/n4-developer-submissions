@@ -1,4 +1,4 @@
-# File
+# Exercise 1: BFile
 In this exercise, you will create a component that represents a file. Note that for real applications, you should use the classes in javax.baja.file. The purpose of this exercise is to get more comfortable creating components in Niagara.
 
 ## Description

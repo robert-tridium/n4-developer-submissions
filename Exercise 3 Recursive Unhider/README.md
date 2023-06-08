@@ -1,4 +1,4 @@
-# Recursive Unhider
+# Exercise 3: Recursive Unhider
 In this exercise, you will create a service that traverses a component tree and unhides all slots.
 
 ## Description

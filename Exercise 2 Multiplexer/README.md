@@ -1,4 +1,4 @@
-# Multiplexer
+# Exercise 2: Multiplexer
 In this exercise, you will create a Niagara Component that implements the behavior of a 4-to-1 multiplexer.
 
 ## Description
