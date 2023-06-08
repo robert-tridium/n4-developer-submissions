@@ -1,11 +1,11 @@
 /* Module Build File */
 
-description     = "A module to hold the implementation of an edge-triggered D Flip Flop."
+description     = "A module to hold an implementation of a multiplexer"
 ext {
 }
 niagaraModule {
-  moduleName = "dflipflop"
-  preferredSymbol = "dff"
+  moduleName = "multiplexer"
+  preferredSymbol = "mux"
   runtimeProfile = "rt"
 }
 
