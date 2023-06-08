@@ -1,0 +1,20 @@
+/* Module Build File */
+
+description     = "An implementation of a service that unhides slots"
+ext {
+}
+niagaraModule {
+  moduleName = "recursiveUnhider"
+  preferredSymbol = "ru"
+  runtimeProfile = "rt"
+}
+
+dependencies {
+  compile "Tridium:nre:4.12"
+  compile "Tridium:baja:4.12"
+}
+
+moduleTestJar {
+  from('srcTest') {
+  }
+}
