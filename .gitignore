@@ -1,5 +1,2 @@
 .idea/
 .gradle/
-
-# Ignore changes to environment
-/environment.gradle
