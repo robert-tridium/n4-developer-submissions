@@ -5,4 +5,5 @@
   <!-- Type Example:
   <type name="MyClass" class="com.acme.BMyClass"/>
   -->
+<type class="com.pentasolutions.devTrafficLights.BMultiplexer" name="Multiplexer"/>
 </types>
