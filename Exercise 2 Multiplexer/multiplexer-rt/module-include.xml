@@ -1,8 +1,7 @@
 <!-- Module Include File -->
-
 <!-- Types -->
 <types>
-  <!-- Type Example:
-  <type name="MyClass" class="com.acme.BMyClass"/>
-  -->
+  <!-- Type Example:<type name="MyClass" class="com.acme.BMyClass"/> -->
+  <!--com.tridiumuniversity.multiplexer-->
+  <type class="com.tridiumuniversity.multiplexer.BMux" name="Mux"/>
 </types>
