@@ -205,10 +205,11 @@ public class BFile extends BComponent{
     setModifiedDate(BAbsTime.make());
   }
 
-  public void doPrint(){
+  public void doPrint() {
     System.out.println("fileName : " + getFileName());
     System.out.println("path : " + getPath());
     System.out.println("size : " + getSize() + " bytes");
     System.out.println("createdDate : " + getCreatedDate().toString());
     System.out.println("modifiedDate : " + getModifiedDate().toString());
+  }
 }
