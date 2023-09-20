@@ -229,7 +229,8 @@ public class BMux extends BComponent
   public void changed(Property property, Context context) {
     super.changed(property, context);
 
-    if(!out.equals(property)){
+    if(s0.equals(property) || s1.equals(property)
+            || in0.equals(property) || in1.equals(property) || in2.equals(property) || in3.equals(property)){
       if(!getS1() && !getS0()) setOut(getIn0());
       if(!getS1() && getS0()) setOut(getIn1());
       if(getS1() && !getS0()) setOut(getIn2());
