@@ -1,0 +1,5 @@
+<!-- Module Include File -->
+<!-- Types -->
+<types>
+  <type class="com.tridiumuniversity.myFile.BTestFile" name="TestFile"/>
+</types>
