@@ -4,6 +4,6 @@
 /* Environment Configuration File */
 
 // TODO: Change the below values to match your development environment
-gradle.ext.niagara_dev_home = "C:/N4_Exercises/n4-developer-submissions"
-gradle.ext.niagara_home = "c:/niagara/niagara-4.12.2.16"
-gradle.ext.niagara_user_home = "C:/Users/H476075/Niagara4.12/tridium"
+gradle.ext.niagara_dev_home = "C:/N4_Labs/n4-developer-submissions"
+gradle.ext.niagara_home = "C:/Niagara/Niagara-4.13.0.186"
+gradle.ext.niagara_user_home = "C:/Users/H526179/Niagara4.13/vykon"
