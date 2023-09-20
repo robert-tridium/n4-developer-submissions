@@ -215,7 +215,7 @@ public class BFile extends BComponent {
   }
   public void doPrint()
   {
-    System.out.println("Hello, World! 2nd Component");
+    System.out.println("Hello, World! 2nd Component1");
 //    setTimeExecuted(BAbsTime.now());
   }
 
