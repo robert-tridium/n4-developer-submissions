@@ -1,48 +1,51 @@
 package com.tridiumuniversity.myFile;
 
+import javax.baja.nre.annotations.Facet;
 import javax.baja.nre.annotations.NiagaraAction;
 import javax.baja.nre.annotations.NiagaraProperty;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.sys.*;
+import javax.baja.units.BUnit;
 
 @NiagaraType
 @NiagaraProperty(
-        name = "fileName",
-        type = "BString",
-        defaultValue = "BString.DEFAULT"
+  name = "fileName",
+  type = "BString",
+  defaultValue = "BString.DEFAULT"
 )
 @NiagaraProperty(
-        name = "path",
-        type = "BString",
-        defaultValue = "BString.DEFAULT"
+  name = "path",
+  type = "BString",
+  defaultValue = "BString.DEFAULT"
 )
 @NiagaraProperty(
-        name = "size",
-        type = "BInteger",
-        defaultValue = "BInteger.DEFAULT"
+  name = "size",
+  type = "BInteger",
+  defaultValue = "BInteger.DEFAULT",
+  facets = @Facet(name = "BFacets.UNITS", value = "BUnit.getUnit(\"byte\")")
 )
 @NiagaraProperty(
-        name = "createdDate",
-        type = "BAbsTime",
-        defaultValue = "BAbsTime.make()"
+  name = "createdDate",
+  type = "BAbsTime",
+  defaultValue = "BAbsTime.DEFAULT"
 )
 @NiagaraProperty(
-        name = "modifiedDate",
-        type = "BAbsTime",
-        defaultValue = "BAbsTime.NULL"
+  name = "modifiedDate",
+  type = "BAbsTime",
+  defaultValue = "BAbsTime.DEFAULT"
 )
 
 @NiagaraAction(
-        name = "touch"
+  name = "touch"
 )
 
 @NiagaraAction(
-        name = "print"
+  name = "print"
 )
 public class BFile extends BComponent{
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.tridiumuniversity.myFile.BFile(1494246911)1.0$ @*/
-/* Generated Tue Sep 19 21:46:10 SGT 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.tridiumuniversity.myFile.BFile(1653390868)1.0$ @*/
+/* Generated Wed Sep 20 18:17:41 SGT 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "fileName"
@@ -99,7 +102,7 @@ public class BFile extends BComponent{
    * @see #getSize
    * @see #setSize
    */
-  public static final Property size = newProperty(0, ((BInteger)(BInteger.DEFAULT)).getInt(), null);
+  public static final Property size = newProperty(0, ((BInteger)(BInteger.DEFAULT)).getInt(), BFacets.make(BFacets.UNITS, BUnit.getUnit("byte")));
   
   /**
    * Get the {@code size} property.
@@ -122,7 +125,7 @@ public class BFile extends BComponent{
    * @see #getCreatedDate
    * @see #setCreatedDate
    */
-  public static final Property createdDate = newProperty(0, BAbsTime.make(), null);
+  public static final Property createdDate = newProperty(0, BAbsTime.DEFAULT, null);
   
   /**
    * Get the {@code createdDate} property.
@@ -145,7 +148,7 @@ public class BFile extends BComponent{
    * @see #getModifiedDate
    * @see #setModifiedDate
    */
-  public static final Property modifiedDate = newProperty(0, BAbsTime.NULL, null);
+  public static final Property modifiedDate = newProperty(0, BAbsTime.DEFAULT, null);
   
   /**
    * Get the {@code modifiedDate} property.
@@ -202,7 +205,7 @@ public class BFile extends BComponent{
 /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
   public void doTouch(){
-    setModifiedDate(BAbsTime.make());
+    setModifiedDate(BAbsTime.now());
   }
 
   public void doPrint() {
