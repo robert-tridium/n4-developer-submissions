@@ -3,4 +3,6 @@
 <types>
   <!-- Type Example:<type name="MyClass" class="com.acme.BMyClass"/> -->
   <!--com.tridiumuniversity.file-->
+  <!--com.tridiumuniversity.myFile-->
+  <type class="com.tridiumuniversity.myFile.BFile" name="File"/>
 </types>
