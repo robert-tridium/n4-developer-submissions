@@ -12,67 +12,70 @@ import javax.baja.util.Lexicon;
 
 @NiagaraType
 @NiagaraProperty(
-        name = "filename",
-        type = "BString",
-        defaultValue = "BString.DEFAULT"
+  name = "fileName",
+  type = "String",
+  defaultValue = "\"\""
+//        defaultValue = "BString.DEFAULT"  (Kept for my understanding)
 )
 @NiagaraProperty(
-        name = "path",
-        type = "BString",
-        defaultValue = "BString.DEFAULT"
+  name = "path",
+  type = "String",
+  defaultValue = "\"\""
+//        defaultValue = "BString.DEFAULT"
 )
 @NiagaraProperty(
-        name = "size",
-        type = "BInteger",
-        defaultValue = "BInteger.DEFAULT"
+  name = "size",
+  type = "int",
+  defaultValue = "0"
+//        defaultValue = "BInteger.DEFAULT"
 )
 @NiagaraProperty(
-        name = "createdDate",
-        type = "BAbsTime",
-        defaultValue = "BAbsTime.DEFAULT"
+  name = "createdDate",
+  type = "BAbsTime",
+  defaultValue = "BAbsTime.DEFAULT"
 )
 @NiagaraProperty(
-        name = "modifiedDate",
-        type = "BAbsTime",
-        defaultValue = "BAbsTime.DEFAULT"
+  name = "modifiedDate",
+  type = "BAbsTime",
+  defaultValue = "BAbsTime.DEFAULT"
 )
 
 @NiagaraAction(
-        name = "touch",
-        defaultValue = "BFile.modifiedDate"
+  name = "touch"
+//  defaultValue = "BFile.modifiedDate" ( defaultValue is only needed if the Action accepts a parameter)
 )
 @NiagaraAction(
-        name = "print",
-        flags = Flags.SUMMARY
+  name = "print",
+  flags = Flags.SUMMARY
 )
 
 public class BFile extends BComponent {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.tridiumuniversity.myFile.BFile(1560643383)1.0$ @*/
-/* Generated Wed Sep 20 11:58:54 IST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.tridiumuniversity.myFile.BFile(1910956116)1.0$ @*/
+/* Generated Fri Sep 22 10:53:27 IST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
-// Property "filename"
+// Property "fileName"
 ////////////////////////////////////////////////////////////////
   
   /**
-   * Slot for the {@code filename} property.
-   * @see #getFilename
-   * @see #setFilename
+   * Slot for the {@code fileName} property.
+   * @see #getFileName
+   * @see #setFileName
    */
-  public static final Property filename = newProperty(0, BString.DEFAULT, null);
+  public static final Property fileName = newProperty(0, "", null);
   
   /**
-   * Get the {@code filename} property.
-   * @see #filename
+   * Get the {@code fileName} property.
+   * @see #fileName
    */
-  public String getFilename() { return getString(filename); }
+  public String getFileName() { return getString(fileName); }
   
   /**
-   * Set the {@code filename} property.
-   * @see #filename
+   * Set the {@code fileName} property.
+   * @see #fileName
    */
-  public void setFilename(String v) { setString(filename, v, null); }
+  public void setFileName(String v) { setString(fileName, v, null); }
 
 ////////////////////////////////////////////////////////////////
 // Property "path"
@@ -83,7 +86,7 @@ public class BFile extends BComponent {
    * @see #getPath
    * @see #setPath
    */
-  public static final Property path = newProperty(0, BString.DEFAULT, null);
+  public static final Property path = newProperty(0, "", null);
   
   /**
    * Get the {@code path} property.
@@ -106,7 +109,7 @@ public class BFile extends BComponent {
    * @see #getSize
    * @see #setSize
    */
-  public static final Property size = newProperty(0, ((BInteger)(BInteger.DEFAULT)).getInt(), null);
+  public static final Property size = newProperty(0, 0, null);
   
   /**
    * Get the {@code size} property.
@@ -190,7 +193,7 @@ public class BFile extends BComponent {
    * Slot for the {@code print} action.
    * @see #print()
    */
-  public static final Action print = newAction(0, null);
+  public static final Action print = newAction(Flags.SUMMARY, null);
   
   /**
    * Invoke the {@code print} action.
@@ -210,13 +213,15 @@ public class BFile extends BComponent {
 
   public void doTouch()
   {
-    System.out.println("Hello, World  print");
     setModifiedDate((BAbsTime.now()));
   }
   public void doPrint()
   {
-    System.out.println("Hello, World! 2nd Component1");
-//    setTimeExecuted(BAbsTime.now());
+    System.out.println("Filename: " + getFilename());
   }
 
+  private String getFilename()
+  {
+    return null;
+  }
 }
