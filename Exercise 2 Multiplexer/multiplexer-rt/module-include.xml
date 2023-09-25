@@ -3,5 +3,4 @@
 <types>
   <!-- Type Example:<type name="MyClass" class="com.acme.BMyClass"/> -->
   <!--com.tridiumuniversity.multiplexer-->
-  <type class="com.tridiumuniversity.multiplexer.BMultiplexer" name="Multiplexer"/>
 </types>
