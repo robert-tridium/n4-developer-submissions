@@ -217,11 +217,6 @@ public class BFile extends BComponent {
   }
   public void doPrint()
   {
-    System.out.println("Filename: " + getFilename());
-  }
-
-  private String getFilename()
-  {
-    return null;
+    System.out.println("Filename: " + getFileName());
   }
 }
