@@ -1,8 +1,8 @@
 <!-- Module Include File -->
-
 <!-- Types -->
 <types>
-  <!-- Type Example:
-  <type name="MyClass" class="com.acme.BMyClass"/>
-  -->
+  <!-- Type Example:<type name="MyClass" class="com.acme.BMyClass"/> -->
+  <!--com.tridiumuniversity.recursiveUnhider-->
+  <type class="com.tridiumuniversity.recursiveUnhider.BRecursiveUnhiderJob" name="RecursiveUnhiderJob"/>
+  <type class="com.tridiumuniversity.recursiveUnhider.BRecursiveUnhiderService" name="RecursiveUnhiderService"/>
 </types>

@@ -44,15 +44,15 @@ import javax.baja.sys.*;
         name = "out",
         type = "BBoolean",
         defaultValue = "BBoolean.DEFAULT",
-        flags = Flags.SUMMARY | Flags.READONLY
+        flags = Flags.SUMMARY | Flags.READONLY | Flags.TRANSIENT
 )
 
 @NiagaraType
 public class BMultiplexer extends BComponent
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.tridiumuniversity.multiplexer.BMultiplexer(1380725982)1.0$ @*/
-/* Generated Tue Sep 19 21:05:40 AEST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.tridiumuniversity.multiplexer.BMultiplexer(1618638586)1.0$ @*/
+/* Generated Mon Sep 25 23:01:26 AEST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "in0"
@@ -201,7 +201,7 @@ public class BMultiplexer extends BComponent
    * @see #getOut
    * @see #setOut
    */
-  public static final Property out = newProperty(Flags.SUMMARY | Flags.READONLY, ((BBoolean)(BBoolean.DEFAULT)).getBoolean(), null);
+  public static final Property out = newProperty(Flags.SUMMARY | Flags.READONLY | Flags.TRANSIENT, ((BBoolean)(BBoolean.DEFAULT)).getBoolean(), null);
   
   /**
    * Get the {@code out} property.
