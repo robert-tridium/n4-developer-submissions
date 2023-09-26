@@ -13,6 +13,11 @@ import java.util.logging.Logger;
         type = "BOrd",
         defaultValue = "BOrd.DEFAULT"
 )
+@NiagaraProperty(
+        name = "regex",
+        type = "String",
+        defaultValue = ""
+)
 @NiagaraAction(
         name = "unhide"
 )
@@ -21,8 +26,8 @@ import java.util.logging.Logger;
 public class BRecursiveUnhiderService extends BAbstractService
 {
 /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
-/*@ $com.tridiumuniversity.recursiveUnhider.BRecursiveUnhiderService(2746338207)1.0$ @*/
-/* Generated Tue Sep 26 00:16:33 AEST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
+/*@ $com.tridiumuniversity.recursiveUnhider.BRecursiveUnhiderService(438038604)1.0$ @*/
+/* Generated Tue Sep 26 01:10:05 AEST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012 */
 
 ////////////////////////////////////////////////////////////////
 // Property "rootOrd"
@@ -46,6 +51,29 @@ public class BRecursiveUnhiderService extends BAbstractService
    * @see #rootOrd
    */
   public void setRootOrd(BOrd v) { set(rootOrd, v, null); }
+
+////////////////////////////////////////////////////////////////
+// Property "regex"
+////////////////////////////////////////////////////////////////
+  
+  /**
+   * Slot for the {@code regex} property.
+   * @see #getRegex
+   * @see #setRegex
+   */
+  public static final Property regex = newProperty(0, "", null);
+  
+  /**
+   * Get the {@code regex} property.
+   * @see #regex
+   */
+  public String getRegex() { return getString(regex); }
+  
+  /**
+   * Set the {@code regex} property.
+   * @see #regex
+   */
+  public void setRegex(String v) { setString(regex, v, null); }
 
 ////////////////////////////////////////////////////////////////
 // Action "unhide"

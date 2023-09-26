@@ -3,6 +3,7 @@ package com.tridiumuniversity.recursiveUnhider;
 import javax.baja.job.BSimpleJob;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.sys.*;
+import java.util.regex.Pattern;
 
 @NiagaraType
 public class BRecursiveUnhiderJob extends BSimpleJob
@@ -34,7 +35,7 @@ public class BRecursiveUnhiderJob extends BSimpleJob
             try
             {
                 BComponent component = (BComponent)recursiveUnhiderService.getRootOrd().get(Sys.getStation());
-                unhideChildren(component, cx);
+                unhideChildren(recursiveUnhiderService.getRegex(), component, cx);
             }
             catch(Exception e)
             {
@@ -43,22 +44,24 @@ public class BRecursiveUnhiderJob extends BSimpleJob
         }
     }
 
-    public void unhideChildren(BComponent component, Context cx)
+    public void unhideChildren(String regex, BComponent component, Context cx)
     {
         SlotCursor<Slot> slots = component.getSlots();
         while(slots.next())
         {
-            if(slots.slot().isDynamic())
+            Slot s = slots.slot();
+            if(s.isDynamic())
             {
-                if(Flags.isHidden(component, slots.slot()))
+                Pattern regexPattern = Pattern.compile(regex);
+                if(regexPattern.matcher(s.getName()).matches() && Flags.isHidden(component, s))
                 {
                     BRecursiveUnhiderService.log.info("Removing Hidden Flag on Slot: " + slots.slot().getName() + " on Component: " + component);
-                    Flags.remove(component, slots.slot(), cx, Flags.HIDDEN);
+                    Flags.remove(component, s, cx, Flags.HIDDEN);
                 }
-                if(slots.get().isComponent())
-                {
-                    unhideChildren(slots.get().asComponent(), cx);
-                }
+            }
+            if(s.isProperty() && slots.get().isComponent())
+            {
+                unhideChildren(regex, slots.get().asComponent(), cx);
             }
         }
     }
