@@ -1,3 +1,33 @@
-.idea/
+# JS temp files
+*.built.js
+*.built.min.js
+**/src/jsdoc/
+/yarn.lock
+node_modules
+.yarnrc
+/package.json
+yarn-error.log
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Gradle
 .gradle/
 build/
+build-eclipse/
+out/
+.kotlintest/
+/gradle.properties
+
+# Visual Studio
+Debug/*
+Release/*
+*.sdf
+*.sln
+*.v12.suo
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
