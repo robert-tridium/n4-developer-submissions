@@ -24,3 +24,25 @@ Try to implement the behavior described above without reading this section. If y
 5. Use Workbench to create a station to test your component.
 6. Start your station and connect to it from within Workbench
 7. Add your component from your palette to the station and test its behavior.
+
+## Added Challenge
+For an added challenge, generalize your 4-to-1 multiplexer to be a 2^n-to-1 multiplexer for any value of n:
+1. Remove all of your component's frozen properties except for `out` so that they can be added dynamically.
+2. Whenever a property changes, your component should check to see how many `in*` properties it has and how many `s*` properties it has. Then, perform the necessary logic to select one of the `in*` properties based on the values of the `s*` properties and forward its value to `out`.
+
+   For instance, I should be able to add an instance of your component to a running station, add eight `BBoolean` properties named `in0` through `in7`, add three `BBoolean` properties named `s0`, `s1`, and `s2`, and your component should automatically set the value of `out` according to the following truth table for an 8-to-1 multiplexer:
+
+| `s2` | `s1` | `s0` | `out` |
+| ---- | ---- | ---- | ----- |
+| F | F | F | `in0` |
+| F | F | T | `in1` |
+| F | T | F | `in2` |
+| F | T | T | `in3` |
+| T | F | F | `in4` |
+| T | F | T | `in5` |
+| T | T | F | `in6` |
+| T | T | T | `in7` |
+
+  I should then be able to change the number of `in*` properties and `s*` properties on your component to make a 2-to-1, 4-to-1, 16-to-1, etc. multiplexer.
+
+3. In your module.palette, create a few versions of your component that already have the correct numbers of inputs for several types of multiplexers. We haven't strictly gone over how to do this yet - look at the Module Development slide deck or ask for help if you need it.
