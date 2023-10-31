@@ -1,0 +1,9 @@
+<types>
+  <!--com.tridiumuniversity.trafficLightWidget.ui-->
+  <type class="com.tridiumuniversity.trafficLightWidget.ui.BTrafficLightWidget" name="TrafficLightWidget"/>
+  <type class="com.tridiumuniversity.trafficLightWidget.ui.BTrafficLightView" name="TrafficLightView">
+    <agent>
+      <on type="trafficLightWidget:TrafficLight"/>
+    </agent>
+  </type>
+</types>

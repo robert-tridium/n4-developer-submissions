@@ -1,0 +1,5 @@
+<types>
+  <!--com.tridiumuniversity.trafficLightWidget-->
+  <type class="com.tridiumuniversity.trafficLightWidget.BTrafficLight" name="TrafficLight"/>
+  <type class="com.tridiumuniversity.trafficLightWidget.BTrafficLightState" name="TrafficLightState"/>
+</types>
