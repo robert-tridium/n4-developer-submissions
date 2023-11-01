@@ -1,0 +1,18 @@
+.user-service-view * {
+  box-sizing: border-box;
+}
+
+.user-service-view .user-grid {
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-top: 1rem;
+  margin-bottom: 30rem;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 1rem;
+  transition: transform 300ms ease-in;
+}
+
+.user-service-view .user-grid > *:hover {
+  transform: scale(1.05);
+}

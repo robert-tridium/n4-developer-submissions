@@ -131,4 +131,4 @@ configure<MultiProjectExtension> {
   findProjects()
 }
 
-rootProject.name = "myFile"
+rootProject.name = "exercises"

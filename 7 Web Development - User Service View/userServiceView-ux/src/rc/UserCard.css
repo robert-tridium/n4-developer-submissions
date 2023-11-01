@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+.user-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 4px 0 rgba(0 0 0 / 0.25);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 3rem 1fr;
+  justify-items: center;
+  align-items: start;
+  gap: 1rem;
+  padding-block: 1rem;
+  cursor: pointer;
+}
+
+.user-card p {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.user-card.enabled {
+  background-color: #fff;
+}
+
+.user-card.disabled {
+  background-color: #ddd;
+}
+
+.user-card .user-initials {
+  font-size: 2rem;
+  background-color: #d8fbd5;
+  width: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-card .user-name {
+  text-align: center;
+}
+
+.user-card .user-name .primary-name {
+  font-size: 1.5rem;
+}
+
+.user-card .user-name .secondary-name {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.user-card .user-roles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.user-card .role-badge {
+  font-size: 1rem;
+  background-color: #E8C7dE;
+  padding-block: 0.25rem;
+  padding-inline: 0.75rem;
+  border-radius: 1rem;
+}
