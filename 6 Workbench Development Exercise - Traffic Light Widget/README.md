@@ -13,7 +13,7 @@ You've been provided in the -rt module part with two classes from the labs: `BTr
 @Override
 public void paint(Graphics g)
 {
-  // Make a blue 10x10 rectangle
+  // Make a blue 10x10 rectangle at (x, y) coordinates (0, 0)
   BRectGeom rectangle = BRectGeom.make(0, 0, 10, 10);
   g.setBrush(BColor.make("blue"));
   g.fill(rectangle);
@@ -23,7 +23,7 @@ public void paint(Graphics g)
   * The `setBrush` method takes a `BColor` parameter.
   * The `fill` method takes an `IGeom` parameter. There are several implementations of `IGeom`, but the ones you should care about for this exercise are `BRectGeom` and `BEllipseGeom`
   * For the traffic light dimensions, I recommend a 100x250 rectangle where each light is 50x50 and has a padding of 25 around it.
-  * I recommend the following colors, although feel free to choose your own. These color formats are RRGGBBAA (red, green, blue, alpha)
+  * I recommend the following colors, although feel free to choose your own. The color formats in the below table are RRGGBBAA (red, green, blue, alpha)
 
 | Light Component | Color |
 | --------------- | ----- |
