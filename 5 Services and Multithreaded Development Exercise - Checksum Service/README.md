@@ -28,7 +28,7 @@ Try to implement the behavior described above without reading this section. If y
 ## Added Challenge
 For an added challenge, add a trigger to your class that allows the user to define a time interval and generate the checksum on a recurring basis at the end of each interval.
 
-![Final image of ChecksumService after the Added Challenge](../images/ChecksumServiceAddedChallenge.png)
+![Final image of ChecksumService after the Added Challenge](../images/ChecksumServiceAddedChallenge.PNG)
 
 Use the `BTimeTrigger` class in the `control` module. This might be difficult if you haven't used `BTimeTrigger` before, so here is some help on how to get started:
 
