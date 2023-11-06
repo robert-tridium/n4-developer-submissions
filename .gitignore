@@ -20,7 +20,6 @@ build/
 build-eclipse/
 out/
 .kotlintest/
-/gradle.properties
 
 # Visual Studio
 Debug/*
