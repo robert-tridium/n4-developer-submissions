@@ -1,7 +1,7 @@
 # Exercise 7: User Service View
 In this exercise, you will use the bajaux framework to create an alternative view for the User Service:
 
-![User Service View](../images/UserServiceView.png)
+![User Service View](../images/UserServiceView.PNG)
 
 ## Description
 In this exericse, you will create two widgets:
