@@ -20,7 +20,7 @@ These steps must be completed for each exercise you want to submit.
 
 1. Navigate to the directory on your machine where you cloned your forked repository.
 2. Create a new branch to hold your changes and check it out. One way to do this is with the command `git checkout -b <branch_name>`, where `<branch_name>` is something descriptive about the changes that will be on your branch.
-4. Complete the exercise, including any coding, testing, etc.
+4. Complete the exercise, including any coding, testing, etc. When compiling, use the Gradle command to only compile the module that you're currently working on. This will avoid issues compiling exercises that you haven't completed yet. For Exercise 1, that command is `gradlew :myFile-rt:jar`.
 5. When you're ready to submit your code for review, create one or more commits holding your changes. A simple way to do this is to run the command `git add .` from the repository root to add all of your changes to staging, then run the command `git commit -m "<commit_message>"` to make a commit containing your changes.
 6. Push your commit(s) to your forked repository in GitHub with the command `git push`. If your local branch isn't tracking an upstream branch, you may need to use the command `git push --set-upstream origin <branch_name>`
 7. In a web browser, navigate to your forked repository. Switch to the branch that you just pushed, then click the Contribute button and choose to open a Pull Request.
