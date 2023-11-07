@@ -1,0 +1,16 @@
+> Task :checksumService-rt:slotomatic
+> Task :driverFinder-rt:slotomatic
+> Task :multiplexer-rt:slotomatic
+
+> Task :myFile-rt:slotomatic
+Could not process C:\N4_Labs\n4-developer-submissions\1 Niagara 4 Overview Exercise - BFile\myFile-rt\src\com\tridiumuniversity\myFile\BFile.java: fromIndex(0) > toIndex(-2)
+The following files failed to compile: 
+  C:\N4_Labs\n4-developer-submissions\1 Niagara 4 Overview Exercise - BFile\myFile-rt\src\com\tridiumuniversity\myFile\BFile.java: fromIndex(0) > toIndex(-2)
+
+> Task :recursiveUnhider-rt:slotomatic
+> Task :trafficLightWidget-rt:slotomatic
+> Task :trafficLightWidget-wb:slotomatic
+> Task :userServiceView-ux:slotomatic
+
+BUILD SUCCESSFUL in 1s
+8 actionable tasks: 8 executed
