@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bajaObjectGraph version="4.0" reversibleEncodingKeySource="none" FIPSEnabled="false" reversibleEncodingValidator="[null.1]=" >
 <p m="b=baja" t="b:Folder">
+    <p m="mul=multiplexer" t="mul:Multiplex" n="Multiplex" />
+    <p t="mul:MultiplexN" n="MultiplexN" />
+    <p t="mul:MultiplexN" n="Multiplex2">
+        <p t="b:Boolean" n="s0" />
+        <p t="b:Boolean" n="in0" />
+        <p t="b:Boolean" n="in1" />
+    </p>
+    <p t="mul:MultiplexN" n="Multiplex4">
+        <p t="b:Boolean" n="s0" />
+        <p t="b:Boolean" n="s1" />
+        <p t="b:Boolean" n="in0" />
+        <p t="b:Boolean" n="in1" />
+        <p t="b:Boolean" n="in2" />
+        <p t="b:Boolean" n="in3" />
+    </p>
+    <p t="mul:MultiplexN" n="Multiplex8">
+        <p t="b:Boolean" n="s0" />
+        <p t="b:Boolean" n="s1" />
+        <p t="b:Boolean" n="s2" />
+        <p t="b:Boolean" n="in0" />
+        <p t="b:Boolean" n="in1" />
+        <p t="b:Boolean" n="in2" />
+        <p t="b:Boolean" n="in3" />
+        <p t="b:Boolean" n="in4" />
+        <p t="b:Boolean" n="in5" />
+        <p t="b:Boolean" n="in6" />
+        <p t="b:Boolean" n="in7" />
+    </p>
+    <p t="mul:MultiplexN" n="Multiplex16">
+        <p t="b:Boolean" n="s0" />
+        <p t="b:Boolean" n="s1" />
+        <p t="b:Boolean" n="s2" />
+        <p t="b:Boolean" n="s3" />
+        <p t="b:Boolean" n="in0" />
+        <p t="b:Boolean" n="in1" />
+        <p t="b:Boolean" n="in2" />
+        <p t="b:Boolean" n="in3" />
+        <p t="b:Boolean" n="in4" />
+        <p t="b:Boolean" n="in5" />
+        <p t="b:Boolean" n="in6" />
+        <p t="b:Boolean" n="in7" />
+        <p t="b:Boolean" n="in8" />
+        <p t="b:Boolean" n="in9" />
+        <p t="b:Boolean" n="in10" />
+        <p t="b:Boolean" n="in11" />
+        <p t="b:Boolean" n="in12" />
+        <p t="b:Boolean" n="in13" />
+        <p t="b:Boolean" n="in14" />
+        <p t="b:Boolean" n="in15" />
+    </p>
 </p>
 </bajaObjectGraph>
