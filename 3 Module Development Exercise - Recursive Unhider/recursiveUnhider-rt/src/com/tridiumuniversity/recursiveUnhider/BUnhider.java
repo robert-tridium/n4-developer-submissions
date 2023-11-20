@@ -12,60 +12,60 @@ import static java.util.concurrent.Executors.newSingleThreadExecutor;
 
 @NiagaraType
 @NiagaraProperty(
-        name = "regex",
+        name = "unhideRegex",
         type = "String",
         defaultValue = "new String()",
         flags = Flags.SUMMARY
 )
 @NiagaraAction(
-        name = "unhide",
+        name = "unhideSlots",
         flags = Flags.SUMMARY | Flags.ASYNC
 )
 public class BUnhider extends BComponent
 {
 //region /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 //@formatter:off
-/*@ $com.tridiumuniversity.recursiveUnhider.BUnhider(3831675021)1.0$ @*/
-/* Generated Thu Nov 16 09:55:49 EST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012-2023 */
+/*@ $com.tridiumuniversity.recursiveUnhider.BUnhider(2130432398)1.0$ @*/
+/* Generated Mon Nov 20 12:07:19 EST 2023 by Slot-o-Matic (c) Tridium, Inc. 2012-2023 */
 
-  //region Property "regex"
-
-  /**
-   * Slot for the {@code regex} property.
-   * @see #getRegex
-   * @see #setRegex
-   */
-  public static final Property regex = newProperty(Flags.SUMMARY, new String(), null);
+  //region Property "unhideRegex"
 
   /**
-   * Get the {@code regex} property.
-   * @see #regex
+   * Slot for the {@code unhideRegex} property.
+   * @see #getUnhideRegex
+   * @see #setUnhideRegex
    */
-  public String getRegex() { return getString(regex); }
+  public static final Property unhideRegex = newProperty(Flags.SUMMARY, new String(), null);
 
   /**
-   * Set the {@code regex} property.
-   * @see #regex
+   * Get the {@code unhideRegex} property.
+   * @see #unhideRegex
    */
-  public void setRegex(String v) { setString(regex, v, null); }
-
-  //endregion Property "regex"
-
-  //region Action "unhide"
+  public String getUnhideRegex() { return getString(unhideRegex); }
 
   /**
-   * Slot for the {@code unhide} action.
-   * @see #unhide()
+   * Set the {@code unhideRegex} property.
+   * @see #unhideRegex
    */
-  public static final Action unhide = newAction(Flags.SUMMARY | Flags.ASYNC, null);
+  public void setUnhideRegex(String v) { setString(unhideRegex, v, null); }
+
+  //endregion Property "unhideRegex"
+
+  //region Action "unhideSlots"
 
   /**
-   * Invoke the {@code unhide} action.
-   * @see #unhide
+   * Slot for the {@code unhideSlots} action.
+   * @see #unhideSlots()
    */
-  public void unhide() { invoke(unhide, null, null); }
+  public static final Action unhideSlots = newAction(Flags.SUMMARY | Flags.ASYNC, null);
 
-  //endregion Action "unhide"
+  /**
+   * Invoke the {@code unhideSlots} action.
+   * @see #unhideSlots
+   */
+  public void unhideSlots() { invoke(unhideSlots, null, null); }
+
+  //endregion Action "unhideSlots"
 
   //region Type
 
@@ -78,28 +78,28 @@ public class BUnhider extends BComponent
 //@formatter:on
 //endregion /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
-    public void doUnhide()
+    public void doUnhideSlots()
     {
-        helper((BComponent) getParent());
+        slotPattern = Pattern.compile(getUnhideRegex());
+        recurse((BComponent) getParent());
     }
 
-    //public static boolean isHidden(BComplex object, Slot slot)
-    //public static void remove(BComponent comp, Slot slot, Context cx, int... flags)
-
-    private void helper(BComponent parent)
+    private void recurse(BComponent parent)
     {
-        Pattern slotName = Pattern.compile(getRegex());
-        for (BComponent child : parent.getChildComponents())
-        {
-            helper(child);
-        }
+        BValue child;
         for (Slot slot : parent.getSlotsArray())
         {
-            if (Flags.isHidden(parent, slot) && slotName.matcher(slot.getName()).matches())
+            if (slot.isProperty())
+            {
+                child = parent.get(slot.asProperty());
+                if (child instanceof BComponent) recurse((BComponent) child);
+            }
+            if (Flags.isHidden(parent, slot) && slotPattern.matcher(slot.getName()).matches())
             {
                 Flags.remove(parent, slot, null, Flags.HIDDEN);
             }
-            if (Flags.isHidden(parent, slot)) System.out.println("Failed");
+            if (Flags.isHidden(parent, slot)) System.out.println("Hidden slot name did not match");
+            else System.out.println("Unhid a slot");
         }
     }
 
@@ -112,12 +112,13 @@ public class BUnhider extends BComponent
     @Override
     public IFuture post(Action a, BValue arg, Context c)
     {
-        if (unhide.equals(a))
+        if (unhideSlots.equals(a))
         {
-            exec.execute(this::doUnhide);
+            exec.execute(this::doUnhideSlots);
         }
         return null;
     }
 
     private ExecutorService exec;
+    private Pattern slotPattern;
 }
