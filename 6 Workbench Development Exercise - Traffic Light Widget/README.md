@@ -1,7 +1,7 @@
 # Exercise 6: Traffic Light Widget
 In this exercise, you will use the bajaui framework to create a widget that allows you to view the state of a traffic light:
 
-![Traffic Light Widget](../images/TrafficLightWidget.png)
+![Traffic Light Widget](../images/TrafficLightWidget.PNG)
 
 ## Description
 You've been provided in the -rt module part with two classes from the labs: `BTrafficLightState` and `BTrafficLight`. Use the bajaui framework to create a new widget. Each of the lights in this widget should have a high opacity when the `state` Property is equal to that light color and a low opacity when the `state` Property is not equal to that light color. For instance, it's clear in the above image that the current value of the `state` Property is `red`, since the red light has a high opacity and the yellow and green lights have a low opacity. Here are some of the fundamentals that you need to know:
