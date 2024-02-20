@@ -1,0 +1,4 @@
+<types>
+  <!--com.tridiumuniversity.multiplexer-->
+  <type class="com.tridiumuniversity.multiplexer.BSuperMultiplexerTest" name="SuperMultiplexerTest"/>
+</types>
