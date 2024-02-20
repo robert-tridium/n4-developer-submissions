@@ -105,6 +105,7 @@ public class BSuperMultiplexerTest extends BTestNg
 	@DataProvider(name = "truthTable")
 	public Object[][] createTruthTable() {
 		return new Object[][] {
+			// s2     s1     s0     out
 			{ false, false, false, "in0" },
 			{ false, false, true,  "in1" },
 			{ false, true,  false, "in2" },
