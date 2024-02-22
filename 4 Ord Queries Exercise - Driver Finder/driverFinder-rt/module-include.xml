@@ -1,0 +1,4 @@
+<types>
+  <!--com.tridiumuniversity.driverFinder-->
+  <type class="com.tridiumuniversity.driverFinder.BDriverFinder" name="DriverFinder"/>
+</types>
