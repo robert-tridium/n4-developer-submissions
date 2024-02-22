@@ -9,8 +9,7 @@ import javax.baja.nre.annotations.NiagaraAction;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.query.BQueryResult;
 import javax.baja.sys.*;
-import javax.baja.tag.Entity;
-import java.util.Iterator;
+import java.util.logging.Logger;
 
 @NiagaraType
 @NiagaraAction(name = "find", parameterType = "BQueryImplementation", defaultValue = "BQueryImplementation.bql")
@@ -52,6 +51,7 @@ public class BDriverFinder extends BComponent {
 		if(impl.equals(BQueryImplementation.bql)) useBql(cx);
 		else useNeql(cx);
 	}
+
 	private static void useBql(Context cx) {
 		BOrd ord = BOrd.make("bql:select slotPath from driver:DeviceNetwork where parent.slotPath != 'slot:/Drivers'");
 		BITable result = (BITable)ord.get(Sys.getStation(), cx);
@@ -60,7 +60,7 @@ public class BDriverFinder extends BComponent {
 		try(TableCursor c = result.cursor()){
 			while(c.next()){
 				BString path = (BString) c.cell(valueColumn);
-				System.out.printf("cell: %s\n", path);
+				log.info(path.toString());
 			}
 		}
 	}
@@ -69,7 +69,9 @@ public class BDriverFinder extends BComponent {
 		BOrd query = BOrd.make("neql:n:network and n:parent->n:type != \"driver:DriverContainer\"");
 		BQueryResult result = (BQueryResult)query.get(Sys.getStation(), cx);
 		result.stream()
-			.map(e -> ((BComponent)e).getSlotPath())
-			.forEach(System.out::println);
+			.map(e -> ((BComponent)e).getSlotPath().toString())
+			.forEach(log::info);
 	}
+
+	private static final Logger log = Logger.getLogger("driverFinder");
 }
