@@ -1,0 +1,4 @@
+<types>
+  <!--com.tridiumuniversity.recursiveUnhider-->
+  <type class="com.tridiumuniversity.recursiveUnhider.BRecursiveUnhider" name="RecursiveUnhider"/>
+</types>
