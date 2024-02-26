@@ -1,0 +1,4 @@
+<types>
+  <!--com.tridiumuniversity.checksumService-->
+  <type class="com.tridiumuniversity.checksumService.BChecksumService" name="ChecksumService"/>
+</types>
