@@ -6,12 +6,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import javax.baja.control.trigger.BTimeTrigger;
 import javax.baja.nre.annotations.NiagaraType;
-import javax.baja.sys.BIService;
-import javax.baja.sys.BStation;
+import javax.baja.sys.*;
 import javax.baja.test.BTestNg;
-import javax.baja.sys.Sys;
-import javax.baja.sys.Type;
 import javax.baja.util.BFolder;
 import java.util.Optional;
 
@@ -75,6 +73,18 @@ public class BChecksumServiceTest extends BTestNg {
 		station.remove("Folder1");
 		long remove1Checksum = service.computeStationChecksum();
 		Assert.assertEquals(remove1Checksum, baselineChecksum);
+	}
+
+	public void testTriggerLinkCreation() {
+		BLink[] links = service.getLinks(service.getSlot("generateChecksum"));
+		Assert.assertEquals(links.length , 1);
+
+		BLink link = links[0];
+		BTimeTrigger trigger = service.getTrigger();
+		this.verifyEquivalent(link.getSourceComponent(), trigger);
+		this.verifyEquivalent(link.getTargetComponent(), service);
+		Assert.assertEquals(link.getSourceSlot(), trigger.getSlot("fireTrigger"));
+		Assert.assertEquals(link.getTargetSlot(), service.getSlot("generateChecksum"));
 	}
 
 	private TestStationHandler handler;

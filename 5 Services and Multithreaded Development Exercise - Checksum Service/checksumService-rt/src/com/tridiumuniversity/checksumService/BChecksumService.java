@@ -1,5 +1,6 @@
 package com.tridiumuniversity.checksumService;
 
+import javax.baja.control.trigger.BTimeTrigger;
 import javax.baja.nre.annotations.NiagaraAction;
 import javax.baja.nre.annotations.NiagaraProperty;
 import javax.baja.nre.annotations.NiagaraType;
@@ -9,12 +10,13 @@ import java.util.zip.Checksum;
 
 @NiagaraType
 @NiagaraProperty(name = "checksum", type = "long", defaultValue = "0L", flags = Flags.SUMMARY | Flags.READONLY)
-@NiagaraAction(name = "generateChecksum")
+@NiagaraProperty(name = "trigger", type = "BTimeTrigger", defaultValue = "new BTimeTrigger()")
+@NiagaraAction(name = "generateChecksum", flags = Flags.HIDDEN)
 public class BChecksumService extends BAbstractService {
 //region /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 //@formatter:off
-/*@ $com.tridiumuniversity.checksumService.BChecksumService(3018086663)1.0$ @*/
-/* Generated Fri Feb 23 09:54:13 CST 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
+/*@ $com.tridiumuniversity.checksumService.BChecksumService(1069283780)1.0$ @*/
+/* Generated Mon Feb 26 09:31:34 CST 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
 
   //region Property "checksum"
 
@@ -39,13 +41,36 @@ public class BChecksumService extends BAbstractService {
 
   //endregion Property "checksum"
 
+  //region Property "trigger"
+
+  /**
+   * Slot for the {@code trigger} property.
+   * @see #getTrigger
+   * @see #setTrigger
+   */
+  public static final Property trigger = newProperty(0, new BTimeTrigger(), null);
+
+  /**
+   * Get the {@code trigger} property.
+   * @see #trigger
+   */
+  public BTimeTrigger getTrigger() { return (BTimeTrigger)get(trigger); }
+
+  /**
+   * Set the {@code trigger} property.
+   * @see #trigger
+   */
+  public void setTrigger(BTimeTrigger v) { set(trigger, v, null); }
+
+  //endregion Property "trigger"
+
   //region Action "generateChecksum"
 
   /**
    * Slot for the {@code generateChecksum} action.
    * @see #generateChecksum()
    */
-  public static final Action generateChecksum = newAction(0, null);
+  public static final Action generateChecksum = newAction(Flags.HIDDEN, null);
 
   /**
    * Invoke the {@code generateChecksum} action.
@@ -65,8 +90,6 @@ public class BChecksumService extends BAbstractService {
 
 //@formatter:on
 //endregion /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
-	@Override
-	public Type[] getServiceTypes() { return new Type[]{ BChecksumService.TYPE }; }
 
 	@SuppressWarnings("unused")
 	public void doGenerateChecksum() {
@@ -88,6 +111,17 @@ public class BChecksumService extends BAbstractService {
 		recurseComponentTree(Sys.getStation(), checksum);
 		return checksum.getValue();
 	}
+
+	@Override
+	public void serviceStarted() {
+		Slot generateChecksumSlot = getSlot("generateChecksum");
+		Slot fireTriggerSlot = getTrigger().getSlot("fireTrigger");
+		this.linkTo(getTrigger(), fireTriggerSlot, generateChecksumSlot);
+	}
+
+	@Override
+	public Type[] getServiceTypes() { return new Type[]{ BChecksumService.TYPE }; }
+
 	private void recurseComponentTree(BComponent comp, Checksum checksum) {
 		for(BComponent child: comp.getChildComponents()) recurseComponentTree(child, checksum);
 		String handle = (String)comp.getHandle();
