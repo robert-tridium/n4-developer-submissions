@@ -40,7 +40,7 @@ define([
 				</div>
 				<p class="user-roles">
 					{roles.map((role, index) => (
-						<span class="role-badge">{role}</span>
+						<span class="role-badge" key={index}>{role}</span>
 					))}
 				</p>
 			</div>
