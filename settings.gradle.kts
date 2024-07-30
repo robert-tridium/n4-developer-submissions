@@ -81,8 +81,8 @@ pluginManagement {
 
   val gradlePluginRepoUrl = "file:///${gradlePluginHome.replace('\\', '/')}"
 
-  val gradlePluginVersion: String = "7.3.40"
-  val settingsPluginVersion: String = "7.3.0"
+  val gradlePluginVersion: String = "7.6.17"
+  val settingsPluginVersion: String = "7.6.3"
 
   repositories {
     maven(url = "$gradlePluginRepoUrl")
