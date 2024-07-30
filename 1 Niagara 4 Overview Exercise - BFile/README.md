@@ -25,3 +25,5 @@ Try to implement the behavior described above without reading this section. If y
 9. Compile your code with the command `gradlew jar`.
 10. Create a new station in Workbench and add a `BFile` component from your palette.
 11. Experiment with changing the Property values and invoking the Actions.
+
+* uebung 1
