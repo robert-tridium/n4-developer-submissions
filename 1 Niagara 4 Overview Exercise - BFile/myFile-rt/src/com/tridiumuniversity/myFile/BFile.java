@@ -52,8 +52,8 @@ import javax.baja.sys.*;
 public class BFile extends BComponent {
 //region /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 //@formatter:off
-/*@ $com.tridiumuniversity.myFile.BFile(36436781)1.0$ @*/
-/* Generated Tue Jul 30 11:21:34 BRT 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
+/*@ $com.tridiumuniversity.myFile.BFile(1337830447)1.0$ @*/
+/* Generated Wed Jul 31 08:07:47 BRT 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
 
   //region Property "filename"
 
@@ -108,7 +108,7 @@ public class BFile extends BComponent {
    * @see #getSize
    * @see #setSize
    */
-  public static final Property size = newProperty(0,0, null);
+  public static final Property size = newProperty(Flags.SUMMARY, 0, null);
 
   /**
    * Get the {@code size} property.
