@@ -42,11 +42,14 @@ moduleManifest {
 // See documentation at module://docDeveloper/doc/build.html#dependencies for the supported
 // dependency types
 dependencies {
-  api("Tridium:js-ux")
-      nre("Tridium:nre")
-      api("Tridium:baja")
-      api("Tridium:bajaux-ux")
-      api("Tridium:web-rt")
+  nre(":nre")
+
+  api(":js-ux")
+  api(":baja")
+  api(":bajaux-ux")
+  api(":web-rt")
+
+  moduleTestImplementation(":test-wb")
 }
 
 tasks.named<Jar>("jar") {

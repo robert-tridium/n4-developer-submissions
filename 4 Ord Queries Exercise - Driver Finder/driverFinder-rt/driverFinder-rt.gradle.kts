@@ -41,12 +41,12 @@ moduleManifest {
 // dependency types
 dependencies {
   // NRE dependencies
-  nre("Tridium:nre")
+  nre(":nre")
 
   // Niagara module dependencies
-  api("Tridium:baja")
+  api(":baja")
 
   // Test Niagara module dependencies
-  moduleTestImplementation("Tridium:test-wb")
+  moduleTestImplementation(":test-wb")
 }
 
