@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 tridiumuniversity. All Rights Reserved.
+ * Copyright 2024 tridiumuniversity. All Rights Reserved.
  */
 
 plugins {

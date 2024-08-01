@@ -41,17 +41,17 @@ moduleManifest {
 // dependency types
 dependencies {
   // NRE dependencies
-  nre("Tridium:nre")
+  nre(":nre")
 
   // Niagara module dependencies
-  api("Tridium:baja")
-  api("Tridium:bajaui-wb")
-  api("Tridium:workbench-wb")
-  api("Tridium:gx-rt")
+  api(":baja")
+  api(":bajaui-wb")
+  api(":workbench-wb")
+  api(":gx-rt")
 
   api(project(":trafficLightWidget-rt"))
 
   // Test Niagara module dependencies
-  moduleTestImplementation("Tridium:test-wb")
+  moduleTestImplementation(":test-wb")
 }
 

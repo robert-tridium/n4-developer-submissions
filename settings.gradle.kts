@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 tridiumuniversity. All Rights Reserved.
+ * Copyright 2024 tridiumuniversity. All Rights Reserved.
  */
 
 import com.tridium.gradle.plugins.settings.MultiProjectExtension
@@ -81,8 +81,8 @@ pluginManagement {
 
   val gradlePluginRepoUrl = "file:///${gradlePluginHome.replace('\\', '/')}"
 
-  val gradlePluginVersion: String = "7.3.40"
-  val settingsPluginVersion: String = "7.3.0"
+  val gradlePluginVersion: String = "7.6.17"
+  val settingsPluginVersion: String = "7.6.3"
 
   repositories {
     maven(url = "$gradlePluginRepoUrl")
