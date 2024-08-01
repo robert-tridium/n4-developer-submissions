@@ -45,3 +45,6 @@ These steps must be completed for each exercise you want to submit.
 
 8. Fill out the Pull Request form and submit the Pull Request.
 9. Your instructor will review your Pull Request and provide feedback on your code. Feel free to also look at other students' pull requests and the feedback on their code to get diverse ideas about how to solve the exercise!
+
+
+* ex_minchan
