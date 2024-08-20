@@ -57,8 +57,8 @@ public class BFile extends BComponent{
     }
 //region /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 //@formatter:off
-/*@ $com.tridiumuniversity.devTrafficLights.BFile(2457297532)1.0$ @*/
-/* Generated Mon Aug 19 15:52:51 BST 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
+/*@ $com.tridiumuniversity.myFile.BFile(2457297532)1.0$ @*/
+/* Generated Tue Aug 20 09:38:05 BST 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
 
   //region Property "fileName"
 
