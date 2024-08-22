@@ -1,4 +1,5 @@
 <types>
   <!--com.tridiumuniversity.multiplexer-->
   <type class="com.tridiumuniversity.multiplexer.BMultiPlex" name="MultiPlex"/>
+  <type class="com.tridiumuniversity.multiplexer.BMultiPlexN" name="MultiPlexN"/>
 </types>
