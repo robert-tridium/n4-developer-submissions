@@ -134,7 +134,7 @@ public class BMultiPlexN extends BComponent
    for(int i = 0; i < countInputs; i++) {
      nameBuilder = "in" + i;
      BValue value = get(getSlot(nameBuilder).asProperty());
-       inputsList.add(0, (BBoolean) value);
+       inputsList.add((BBoolean) value);
    }
 
    for(int i = 0; i < countSelectors; i++) {
