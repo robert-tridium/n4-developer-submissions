@@ -1,4 +1,0 @@
-<types>
-  <!--com.tridiumuniversity.myFile-->
-  <type class="com.tridiumuniversity.myFile.BFile" name="File"/>
-</types>
