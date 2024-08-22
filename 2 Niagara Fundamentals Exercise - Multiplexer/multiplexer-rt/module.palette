@@ -1,5 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bajaObjectGraph version="4.0" reversibleEncodingKeySource="none" FIPSEnabled="false" reversibleEncodingValidator="[null.1]=" >
 <p m="b=baja" t="b:Folder">
+<p m="mux=multiplexer" t="mux:Multiplexer" n="Multiplexer" />
+<p m="mux=multiplexer" t="mux:Multiplexer" n="x2_Multiplexer">
+    <p n="s0" t="b:Boolean" v="false"/>
+    <p n="in0" t="b:Boolean" v="false"/>
+    <p n="in1" t="b:Boolean" v="false"/>
+</p>
+<p m="mux=multiplexer" t="mux:Multiplexer" n="x4_Multiplexer">
+    <p n="s0" t="b:Boolean" v="false"/>
+    <p n="s1" t="b:Boolean" v="false"/>
+    <p n="in0" t="b:Boolean" v="false"/>
+    <p n="in1" t="b:Boolean" v="false"/>
+    <p n="in2" t="b:Boolean" v="false"/>
+    <p n="in3" t="b:Boolean" v="false"/>
+</p>
+<p m="mux=multiplexer" t="mux:Multiplexer" n="x8_Multiplexer">
+    <p n="s0" t="b:Boolean" v="false"/>
+    <p n="s1" t="b:Boolean" v="false"/>
+    <p n="s2" t="b:Boolean" v="false"/>
+    <p n="in0" t="b:Boolean" v="false"/>
+    <p n="in1" t="b:Boolean" v="false"/>
+    <p n="in2" t="b:Boolean" v="false"/>
+    <p n="in3" t="b:Boolean" v="false"/>
+    <p n="in4" t="b:Boolean" v="false"/>
+    <p n="in5" t="b:Boolean" v="false"/>
+    <p n="in6" t="b:Boolean" v="false"/>
+    <p n="in7" t="b:Boolean" v="false"/>
+</p>
+<p m="mux=multiplexer" t="mux:Multiplexer" n="x16_Multiplexer">
+    <p n="s0" t="b:Boolean" v="false"/>
+    <p n="s1" t="b:Boolean" v="false"/>
+    <p n="s2" t="b:Boolean" v="false"/>
+    <p n="s3" t="b:Boolean" v="false"/>
+    <p n="in0" t="b:Boolean" v="false"/>
+    <p n="in1" t="b:Boolean" v="false"/>
+    <p n="in2" t="b:Boolean" v="false"/>
+    <p n="in3" t="b:Boolean" v="false"/>
+    <p n="in4" t="b:Boolean" v="false"/>
+    <p n="in5" t="b:Boolean" v="false"/>
+    <p n="in6" t="b:Boolean" v="false"/>
+    <p n="in7" t="b:Boolean" v="false"/>
+    <p n="in8" t="b:Boolean" v="false"/>
+    <p n="in9" t="b:Boolean" v="false"/>
+    <p n="in10" t="b:Boolean" v="false"/>
+    <p n="in11" t="b:Boolean" v="false"/>
+    <p n="in12" t="b:Boolean" v="false"/>
+    <p n="in13" t="b:Boolean" v="false"/>
+    <p n="in14" t="b:Boolean" v="false"/>
+    <p n="in15" t="b:Boolean" v="false"/>
+</p>
+<p m="mux=multiplexer" t="mux:Multiplexer" n="x32_xMultiplexer">
+    <p n="s0" t="b:Boolean" v="false"/>
+    <p n="s1" t="b:Boolean" v="false"/>
+    <p n="s2" t="b:Boolean" v="false"/>
+    <p n="s3" t="b:Boolean" v="false"/>
+    <p n="s4" t="b:Boolean" v="false"/>
+    <p n="in0" t="b:Boolean" v="false"/>
+    <p n="in1" t="b:Boolean" v="false"/>
+    <p n="in2" t="b:Boolean" v="false"/>
+    <p n="in3" t="b:Boolean" v="false"/>
+    <p n="in4" t="b:Boolean" v="false"/>
+    <p n="in5" t="b:Boolean" v="false"/>
+    <p n="in6" t="b:Boolean" v="false"/>
+    <p n="in7" t="b:Boolean" v="false"/>
+    <p n="in8" t="b:Boolean" v="false"/>
+    <p n="in9" t="b:Boolean" v="false"/>
+    <p n="in10" t="b:Boolean" v="false"/>
+    <p n="in11" t="b:Boolean" v="false"/>
+    <p n="in12" t="b:Boolean" v="false"/>
+    <p n="in13" t="b:Boolean" v="false"/>
+    <p n="in14" t="b:Boolean" v="false"/>
+    <p n="in15" t="b:Boolean" v="false"/>
+    <p n="in16" t="b:Boolean" v="false"/>
+    <p n="in17" t="b:Boolean" v="false"/>
+    <p n="in18" t="b:Boolean" v="false"/>
+    <p n="in19" t="b:Boolean" v="false"/>
+    <p n="in20" t="b:Boolean" v="false"/>
+    <p n="in21" t="b:Boolean" v="false"/>
+    <p n="in22" t="b:Boolean" v="false"/>
+    <p n="in23" t="b:Boolean" v="false"/>
+    <p n="in24" t="b:Boolean" v="false"/>
+    <p n="in25" t="b:Boolean" v="false"/>
+    <p n="in26" t="b:Boolean" v="false"/>
+    <p n="in27" t="b:Boolean" v="false"/>
+    <p n="in28" t="b:Boolean" v="false"/>
+    <p n="in29" t="b:Boolean" v="false"/>
+    <p n="in30" t="b:Boolean" v="false"/>
+    <p n="in31" t="b:Boolean" v="false"/>
+</p>
+<p m="mux=multiplexer" t="mux:Multiplexer" n="x64_Multiplexer">
+    <p n="s0" t="b:Boolean" v="false"/>
+    <p n="s1" t="b:Boolean" v="false"/>
+    <p n="s2" t="b:Boolean" v="false"/>
+    <p n="s3" t="b:Boolean" v="false"/>
+    <p n="s4" t="b:Boolean" v="false"/>
+    <p n="s5" t="b:Boolean" v="false"/>
+    <p n="in0" t="b:Boolean" v="false"/>
+    <p n="in1" t="b:Boolean" v="false"/>
+    <p n="in2" t="b:Boolean" v="false"/>
+    <p n="in3" t="b:Boolean" v="false"/>
+    <p n="in4" t="b:Boolean" v="false"/>
+    <p n="in5" t="b:Boolean" v="false"/>
+    <p n="in6" t="b:Boolean" v="false"/>
+    <p n="in7" t="b:Boolean" v="false"/>
+    <p n="in8" t="b:Boolean" v="false"/>
+    <p n="in9" t="b:Boolean" v="false"/>
+    <p n="in10" t="b:Boolean" v="false"/>
+    <p n="in11" t="b:Boolean" v="false"/>
+    <p n="in12" t="b:Boolean" v="false"/>
+    <p n="in13" t="b:Boolean" v="false"/>
+    <p n="in14" t="b:Boolean" v="false"/>
+    <p n="in15" t="b:Boolean" v="false"/>
+    <p n="in16" t="b:Boolean" v="false"/>
+    <p n="in17" t="b:Boolean" v="false"/>
+    <p n="in18" t="b:Boolean" v="false"/>
+    <p n="in19" t="b:Boolean" v="false"/>
+    <p n="in20" t="b:Boolean" v="false"/>
+    <p n="in21" t="b:Boolean" v="false"/>
+    <p n="in22" t="b:Boolean" v="false"/>
+    <p n="in23" t="b:Boolean" v="false"/>
+    <p n="in24" t="b:Boolean" v="false"/>
+    <p n="in25" t="b:Boolean" v="false"/>
+    <p n="in26" t="b:Boolean" v="false"/>
+    <p n="in27" t="b:Boolean" v="false"/>
+    <p n="in28" t="b:Boolean" v="false"/>
+    <p n="in29" t="b:Boolean" v="false"/>
+    <p n="in30" t="b:Boolean" v="false"/>
+    <p n="in31" t="b:Boolean" v="false"/>
+    <p n="in32" t="b:Boolean" v="false"/>
+    <p n="in33" t="b:Boolean" v="false"/>
+    <p n="in34" t="b:Boolean" v="false"/>
+    <p n="in35" t="b:Boolean" v="false"/>
+    <p n="in36" t="b:Boolean" v="false"/>
+    <p n="in37" t="b:Boolean" v="false"/>
+    <p n="in38" t="b:Boolean" v="false"/>
+    <p n="in39" t="b:Boolean" v="false"/>
+    <p n="in40" t="b:Boolean" v="false"/>
+    <p n="in41" t="b:Boolean" v="false"/>
+    <p n="in42" t="b:Boolean" v="false"/>
+    <p n="in43" t="b:Boolean" v="false"/>
+    <p n="in44" t="b:Boolean" v="false"/>
+    <p n="in45" t="b:Boolean" v="false"/>
+    <p n="in46" t="b:Boolean" v="false"/>
+    <p n="in47" t="b:Boolean" v="false"/>
+    <p n="in48" t="b:Boolean" v="false"/>
+    <p n="in49" t="b:Boolean" v="false"/>
+    <p n="in50" t="b:Boolean" v="false"/>
+    <p n="in51" t="b:Boolean" v="false"/>
+    <p n="in52" t="b:Boolean" v="false"/>
+    <p n="in53" t="b:Boolean" v="false"/>
+    <p n="in54" t="b:Boolean" v="false"/>
+    <p n="in55" t="b:Boolean" v="false"/>
+    <p n="in56" t="b:Boolean" v="false"/>
+    <p n="in57" t="b:Boolean" v="false"/>
+    <p n="in58" t="b:Boolean" v="false"/>
+    <p n="in59" t="b:Boolean" v="false"/>
+    <p n="in60" t="b:Boolean" v="false"/>
+    <p n="in61" t="b:Boolean" v="false"/>
+    <p n="in62" t="b:Boolean" v="false"/>
+    <p n="in63" t="b:Boolean" v="false"/>
+</p>
 </p>
 </bajaObjectGraph>
