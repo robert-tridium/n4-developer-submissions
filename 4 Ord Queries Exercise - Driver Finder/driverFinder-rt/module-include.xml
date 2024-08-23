@@ -1,0 +1,5 @@
+<types>
+  <!--com.tridiumuniversity.multiplexer-->
+  <!--com.tridiumuniversity.driverFinder-->
+  <type class="com.tridiumuniversity.driverFinder.BDriverSearch" name="DriverSearch"/>
+</types>
