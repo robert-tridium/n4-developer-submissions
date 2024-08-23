@@ -99,7 +99,12 @@ public class BMultiPlexN extends BComponent
   public void changed(Property p, Context cx)
   {
     if (!isRunning()) return;
-    calculate();
+    try {
+      calculate();
+    } catch (Exception e) {
+      // TO-DO how to popup message box to the end user??
+      System.out.println(e.getMessage());
+    }
   }
   @Override
   public void added(Property p, Context cx)
@@ -115,13 +120,15 @@ public class BMultiPlexN extends BComponent
   {
     //To-do maximum number of input slots
     int flags = Flags.SUMMARY | Flags.DEFAULT_ON_CLONE;
-    add("in0?", BBoolean.make(false).as(BBoolean.class), flags); // BBoolean.make(false).as(BBoolean.class).getBoolean()
+    //add("in0?", BBoolean.make(false).as(BBoolean.class), flags); // BBoolean.make(false).as(BBoolean.class).getBoolean()
+    add("in0?", BBoolean.FALSE, flags);
   }
   public void doAddSelector()
   {
     //To-do minimum number of input slots
     int flags = Flags.SUMMARY | Flags.DEFAULT_ON_CLONE;
-    add("s0?", BBoolean.make(false).as(BBoolean.class), flags);
+    //add("s0?", BBoolean.make(false).as(BBoolean.class), flags);
+    add("s0?", BBoolean.FALSE, flags);
  }
 
 
@@ -133,24 +140,32 @@ public class BMultiPlexN extends BComponent
 
    for(int i = 0; i < countInputs; i++) {
      nameBuilder = "in" + i;
-     BValue value = get(getSlot(nameBuilder).asProperty());
+     //BValue value = get(getSlot(nameBuilder).asProperty()); //Alternative
+     BValue value = get(nameBuilder);
        inputsList.add((BBoolean) value);
    }
 
    for(int i = 0; i < countSelectors; i++) {
      nameBuilder = "s" + i;
-     BValue value = get(getSlot(nameBuilder).asProperty());
+     //BValue value = get(getSlot(nameBuilder).asProperty());
+     BValue value = get(nameBuilder);
      selectorsList.add(0, (BBoolean) value);
    }
 
-   int selectedInput = 0;
-   for (int i = 0; i < countSelectors; i++) {
-     if (selectorsList.get(i).getBoolean()) {
-       selectedInput |= 1 << (countSelectors - 1 - i);
+   if(checkInputsAmount()) {
+     int selectedInput = 0;
+     for (int i = 0; i < countSelectors; i++) {
+       if (selectorsList.get(i).getBoolean()) {
+         selectedInput |= 1 << (countSelectors - 1 - i);
+       }
      }
+
+     setOut(inputsList.get(selectedInput).getBoolean());
+   } else {
+     throw new IllegalStateException("Illegal operation: The number of inputs does not match the required amount based on selectors.");
    }
 
-   setOut(inputsList.get(selectedInput).getBoolean());
+
  }
  private void countDynamicsSlots() {
     countInputs = 0;
@@ -162,6 +177,11 @@ public class BMultiPlexN extends BComponent
         countSelectors++;
       }
     }
+ }
+ private boolean checkInputsAmount()
+ {
+   double maxInput = Math.pow(2, countSelectors);
+   return maxInput == countInputs;
  }
  private int countInputs = 0;
  private int countSelectors = 0;

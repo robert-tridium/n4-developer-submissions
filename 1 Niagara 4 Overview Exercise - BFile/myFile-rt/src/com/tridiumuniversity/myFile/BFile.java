@@ -25,12 +25,12 @@ import java.lang.reflect.Field;
 @NiagaraProperty(
         name = "createdDate",
         type = "BAbsTime",
-        defaultValue = "BAbsTime.now"
+        defaultValue = "BAbsTime.DEFAULT"
 )
 @NiagaraProperty(
         name = "modifiedDate",
         type = "BAbsTime",
-        defaultValue = "BAbsTime.Default"
+        defaultValue = "BAbsTime.DEFAULT"
 )
 @NiagaraAction(
         name = "touch"
@@ -42,8 +42,8 @@ public class BFile extends BComponent
 {
 //region /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
 //@formatter:off
-/*@ $com.tridiumuniversity.myFile.BFile(3108852068)1.0$ @*/
-/* Generated Tue Aug 20 21:38:04 CEST 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
+/*@ $com.tridiumuniversity.myFile.BFile(2070910873)1.0$ @*/
+/* Generated Fri Aug 23 11:43:14 CEST 2024 by Slot-o-Matic (c) Tridium, Inc. 2012-2024 */
 
   //region Property "fileName"
 
@@ -121,7 +121,7 @@ public class BFile extends BComponent
    * @see #getCreatedDate
    * @see #setCreatedDate
    */
-  public static final Property createdDate = newProperty(0, BAbsTime.now(), null);
+  public static final Property createdDate = newProperty(0, BAbsTime.DEFAULT, null);
 
   /**
    * Get the {@code createdDate} property.
@@ -211,27 +211,16 @@ public class BFile extends BComponent
 
     public void doPrint()
     {
-        //this.printAllProperties();
-        //print();
-        System.out.println("File Name: " + getFileName());
-        System.out.println("File path: " + getPath());
-        System.out.println("File size: " + getSize());
+        printAllProperties();
+
     }
     public void printAllProperties() {
-        Field[] fields = this.getClass().getDeclaredFields();
-
-        for (Field field : fields) {
-            //if (field.isAnnotationPresent(NiagaraProperty.class)) {
-                // Get the annotation
-                NiagaraProperty property = field.getAnnotation(NiagaraProperty.class);
-
-                // Print the property details
-                System.out.println("Property Name: " + property.name());
-                System.out.println("Property Type: " + property.type());
-                System.out.println("Default Value: " + property.defaultValue());
-                //System.out.println("field name: " + field.getName());
-            System.out.println("field name: " + field.toString());
-            //}
+        for(Slot slot : getSlots())
+        {
+            if (slot.isProperty())
+            {
+                System.out.println(slot.getName() + ": " + get((Property)slot));
+            }
         }
     }
 }

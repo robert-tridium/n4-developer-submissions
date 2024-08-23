@@ -2,6 +2,18 @@
 <bajaObjectGraph version="4.0" reversibleEncodingKeySource="none" FIPSEnabled="false" reversibleEncodingValidator="[null.1]=" >
 <p m="b=baja" t="b:Folder">
     <p m="mp=multiplexer" t="mp:MultiPlex" n="MultiPlex" />
-    <p m="mp=multiplexer" t="mp:MultiPlexN" n="MultiPlexN" />
+    <p m="mp=multiplexer" t="mp:MultiPlexN" n="MultiPlexN">
+      <p n="s0" t="b:Boolean" v="false" />
+      <p n="s1" t="b:Boolean" v="false" />
+      <p n="s2" t="b:Boolean" v="false" />
+      <p n="in0" t="b:Boolean" v="false" />
+      <p n="in1" t="b:Boolean" v="false" />
+      <p n="in2" t="b:Boolean" v="false" />
+      <p n="in3" t="b:Boolean" v="false" />
+      <p n="in4" t="b:Boolean" v="false" />
+      <p n="in5" t="b:Boolean" v="false" />
+      <p n="in6" t="b:Boolean" v="false" />
+      <p n="in7" t="b:Boolean" v="false" />
+    </p>
 </p>
 </bajaObjectGraph>
