@@ -2,12 +2,12 @@
 <bajaObjectGraph version="4.0" reversibleEncodingKeySource="none" FIPSEnabled="false" reversibleEncodingValidator="[null.1]=" >
 <p m="b=baja" t="b:Folder">
 <p m="mux=multiplexer" t="mux:Multiplexer" n="Multiplexer" />
-<p m="mux=multiplexer" t="mux:Multiplexer" n="x2_Multiplexer">
+<p t="mux:Multiplexer" n="x2_Multiplexer">
     <p n="s0" t="b:Boolean" v="false"/>
     <p n="in0" t="b:Boolean" v="false"/>
     <p n="in1" t="b:Boolean" v="false"/>
 </p>
-<p m="mux=multiplexer" t="mux:Multiplexer" n="x4_Multiplexer">
+<p t="mux:Multiplexer" n="x4_Multiplexer">
     <p n="s0" t="b:Boolean" v="false"/>
     <p n="s1" t="b:Boolean" v="false"/>
     <p n="in0" t="b:Boolean" v="false"/>
@@ -15,7 +15,7 @@
     <p n="in2" t="b:Boolean" v="false"/>
     <p n="in3" t="b:Boolean" v="false"/>
 </p>
-<p m="mux=multiplexer" t="mux:Multiplexer" n="x8_Multiplexer">
+<p t="mux:Multiplexer" n="x8_Multiplexer">
     <p n="s0" t="b:Boolean" v="false"/>
     <p n="s1" t="b:Boolean" v="false"/>
     <p n="s2" t="b:Boolean" v="false"/>
@@ -28,7 +28,7 @@
     <p n="in6" t="b:Boolean" v="false"/>
     <p n="in7" t="b:Boolean" v="false"/>
 </p>
-<p m="mux=multiplexer" t="mux:Multiplexer" n="x16_Multiplexer">
+<p t="mux:Multiplexer" n="x16_Multiplexer">
     <p n="s0" t="b:Boolean" v="false"/>
     <p n="s1" t="b:Boolean" v="false"/>
     <p n="s2" t="b:Boolean" v="false"/>
@@ -50,7 +50,7 @@
     <p n="in14" t="b:Boolean" v="false"/>
     <p n="in15" t="b:Boolean" v="false"/>
 </p>
-<p m="mux=multiplexer" t="mux:Multiplexer" n="x32_xMultiplexer">
+<p t="mux:Multiplexer" n="x32_xMultiplexer">
     <p n="s0" t="b:Boolean" v="false"/>
     <p n="s1" t="b:Boolean" v="false"/>
     <p n="s2" t="b:Boolean" v="false"/>
@@ -89,7 +89,7 @@
     <p n="in30" t="b:Boolean" v="false"/>
     <p n="in31" t="b:Boolean" v="false"/>
 </p>
-<p m="mux=multiplexer" t="mux:Multiplexer" n="x64_Multiplexer">
+<p t="mux:Multiplexer" n="x64_Multiplexer">
     <p n="s0" t="b:Boolean" v="false"/>
     <p n="s1" t="b:Boolean" v="false"/>
     <p n="s2" t="b:Boolean" v="false"/>
