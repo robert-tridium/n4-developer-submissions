@@ -1,10 +1,12 @@
 package com.tridiumuniversity.myFile;
 
+
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.nre.annotations.NiagaraProperty;
 import javax.baja.nre.annotations.NiagaraAction;
 import javax.baja.sys.*;
-
+import java.util.Map;
+import java.util.LinkedHashMap;
 
 @NiagaraType
 
@@ -214,10 +216,14 @@ public class BFile extends BComponent {
     setModifiedDate(BAbsTime.now());
   }
   public void doPrint() {
-    System.out.println(getFileName());
-    System.out.println(getPath());
-    System.out.println(getSize());
-    System.out.println(getCreatedDate());
-    System.out.println(getModifiedDate());
+    Map<String, Object> myProperties = new LinkedHashMap<>();
+    myProperties.put("fileName", getFileName());
+    myProperties.put("path", getPath());
+    myProperties.put("size", getSize());
+    myProperties.put("createdDate", getCreatedDate());
+    myProperties.put("modifiedDate", getModifiedDate());
+
+    System.out.println("BFile Properties: " + myProperties.toString().replace(", ", ",\n"));
+
   }
 }
