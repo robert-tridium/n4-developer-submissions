@@ -214,6 +214,10 @@ public class BFile extends BComponent {
     setModifiedDate(BAbsTime.now());
   }
   public void doPrint() {
-    System.out.println("print fired");
+    System.out.println(getFileName());
+    System.out.println(getPath());
+    System.out.println(getSize());
+    System.out.println(getCreatedDate());
+    System.out.println(getModifiedDate());
   }
 }
