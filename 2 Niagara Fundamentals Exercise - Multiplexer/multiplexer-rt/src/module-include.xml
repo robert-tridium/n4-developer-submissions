@@ -1,0 +1,5 @@
+<!-- ~  Copyright 2023 Tridium, Inc. All Rights Reserved. This code is supplied as example code only and is not intended for use in production. -->
+<types>
+  <!--com.tridiumuniversity.devTrafficLights-->
+  <type class="com.tridiumuniversity.multiplexer.BMultiplexer" name="Multiplexer"/>
+</types>
