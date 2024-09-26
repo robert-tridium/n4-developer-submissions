@@ -1,0 +1,5 @@
+<types>
+  <!--com.tridiumuniversity.multiplexer-->
+  <type class="com.tridiumuniversity.multiplexer.BMultiplexer" name="Multiplexer"/>
+  <type class="com.tridiumuniversity.multiplexer.BMultiplexer2" name="Multiplexer2"/>
+</types>
