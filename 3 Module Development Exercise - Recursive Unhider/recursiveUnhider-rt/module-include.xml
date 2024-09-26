@@ -1,0 +1,5 @@
+<types>
+  <!--com.tridiumuniversity.recursiveUnhider-->
+  <type class="com.tridiumuniversity.recursiveUnhider.BUnhider" name="Unhider"/>
+  <type class="com.tridiumuniversity.recursiveUnhider.BUnhiderRegex" name="UnhiderRegex"/>
+</types>
