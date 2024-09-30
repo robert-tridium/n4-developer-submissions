@@ -15,5 +15,6 @@
       <!--<parameter name="type" value="all"/>-->
     <!--</parameters>-->
     <!--</req-permission>-->
+
   </niagara-permission-groups>
 </permissions>

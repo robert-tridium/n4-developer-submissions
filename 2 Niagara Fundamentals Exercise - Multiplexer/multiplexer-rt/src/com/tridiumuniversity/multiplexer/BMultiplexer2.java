@@ -103,31 +103,27 @@ public class BMultiplexer2 extends BComponent {
 //endregion /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
   public void doAddSSlots ( BInteger count, Context cx) {
-    int sNumber = 0;
-    for (int i = 0; i < count.getInt(); i++) {
-        sNumber = checkSCount();
-        add("s" + sNumber, BBoolean.make(false));
+    int sCount = checkSCount();
+    for (int i = sCount; i < sCount + count.getInt(); i++) {
+        add("s" + i, BBoolean.FALSE);
     }
   }
   public void doAddInSlots ( BInteger count, Context cx) {
-    int inNumber = 0;
-    for (int i = 0; i < count.getInt(); i++) {
-        inNumber = checkInCount();
-        add("in" + inNumber, BBoolean.make(false));
+    int inCount = checkInCount();
+    for (int i = inCount; i < inCount + count.getInt(); i++) {
+        add("in" + i, BBoolean.FALSE);
     }
   }
 
   @Override
   public void changed (Property property, Context context){
-    for (Slot slot : getSlots()) {
-      if (property.equals(slot)){
+
+      if (property.getName().startsWith("in") || property.getName().startsWith("s")){
         setOut(calculate());
         return;
       }
-    }
   }
   private boolean calculate () {
-    int inCount = checkInCount();
     int sCount = checkSCount();
     int inNumber = 0;
     for (int i = 0; i < sCount; i++) {
