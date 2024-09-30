@@ -85,7 +85,7 @@ public class BDriverFinder extends BComponent {
 //endregion /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
   public void doFind (Context context) {
-    BITable <BComponent> table = (BITable<BComponent>) BOrd.make("bql:select * from driver:DeviceNetwork where navParent.type!='driver:DriverContainer'" )
+    BITable <BComponent> table = (BITable<BComponent>) BOrd.make("bql:select from driver:DeviceNetwork where navParent.type!='driver:DriverContainer'" )
             .get(Sys.getStation(), context);
 
     try (TableCursor<BComponent> curser = table.cursor()){
