@@ -6,12 +6,17 @@ import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.query.BQueryResult;
 import javax.baja.sys.Action;
 import javax.baja.sys.BComponent;
+import javax.baja.sys.BValue;
 import javax.baja.sys.Context;
 import javax.baja.sys.Flags;
 import javax.baja.sys.Sys;
 import javax.baja.sys.Type;
 import javax.baja.tag.Entity;
+import javax.baja.util.IFuture;
+import java.util.concurrent.ExecutorService;
 import java.util.logging.Logger;
+
+import static java.util.concurrent.Executors.newSingleThreadExecutor;
 
 @NiagaraType
 @NiagaraAction(
@@ -59,5 +64,21 @@ public class BDriverFinderNEQL extends BComponent {
         BComponent component = (BComponent)entity;
         logger.info("Is not in Driver Container: " + component.getSlotPath());
     }
+    @Override
+    public void started() { executor = newSingleThreadExecutor();}
+    @Override
+    public void stopped() {
+        if (executor != null) {
+            executor.shutdownNow();
+        }
+    }
+    @Override
+    public IFuture post(Action action, BValue argument, Context context){
+        if (find.equals(action)) {
+            executor.execute(() -> doFind(context));
+        }
+        return null;
+    }
+    private ExecutorService executor;
     private static final Logger logger = Logger.getLogger("DriverFinder");
 }
