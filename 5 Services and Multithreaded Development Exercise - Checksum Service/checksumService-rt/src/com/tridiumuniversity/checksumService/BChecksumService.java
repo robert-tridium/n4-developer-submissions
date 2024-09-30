@@ -120,23 +120,21 @@ public class BChecksumService extends BAbstractService {
 
     public void doGenerateChecksum(Context context) {
         Checksum crc32 = new CRC32();
-       if (getEnabled()) {
+        if (getEnabled()) {
             BITable<BComponent> componentTable = (BITable<BComponent>) BOrd.make("bql:select * from baja:Component")
-                            .get(Sys.getStation(), context);
-           String handleString = new String("");
-           byte[] handleBytes;
+                    .get(Sys.getStation(), context);
+            String handleString = new String("");
+            byte[] handleBytes;
 
             try (TableCursor<BComponent> cursor = componentTable.cursor()) {
-                for (BComponent component:cursor)
+                for (BComponent component : cursor) {
                     handleString = component.getHandle().toString();
-                    logger.info("handlestring: " + handleString);
                     handleBytes = handleString.getBytes();
-                    crc32.update(handleBytes, 0, handleBytes.length );
-                    logger.info("checksum: " + crc32.getValue());
+                    crc32.update(handleBytes, 0, handleBytes.length);
+                }
+                setChecksum(crc32.getValue());
             }
-            setChecksum(crc32.getValue());
         }
-
     }
 
     @Override
