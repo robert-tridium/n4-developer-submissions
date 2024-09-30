@@ -5,12 +5,14 @@ import javax.baja.nre.annotations.NiagaraProperty;
 import javax.baja.nre.annotations.NiagaraType;
 import javax.baja.sys.Action;
 import javax.baja.sys.BComponent;
+import javax.baja.sys.BValue;
 import javax.baja.sys.Context;
 import javax.baja.sys.Flags;
 import javax.baja.sys.Property;
 import javax.baja.sys.Slot;
 import javax.baja.sys.Sys;
 import javax.baja.sys.Type;
+import javax.baja.util.IFuture;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
@@ -22,7 +24,7 @@ import java.util.regex.Pattern;
 @NiagaraProperty(
         name = "regex",
         type = "String",
-        defaultValue = "\"\"",
+        defaultValue = "",
         flags = Flags.SUMMARY
 )
 public class BUnhiderRegex extends BComponent {
@@ -82,8 +84,6 @@ public class BUnhiderRegex extends BComponent {
 //endregion /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
 
     public void doUnhide (Context context) {
-
-      logger.info("Regex: " + getRegex());
       removeHiddenFlagFromChildren((BComponent) getParent(), context);
     }
     private void removeHiddenFlagFromChildren(BComponent component, Context context) {
@@ -99,14 +99,19 @@ public class BUnhiderRegex extends BComponent {
       Pattern regex = Pattern.compile(getRegex());
 
       for (Slot slot : component.getSlots()){
-        if (Flags.isHidden(component, slot)){
-          if (regex.matcher(slot.getName()).matches()) {
-            Flags.remove(component, slot, context, 4);
-          }
-
+        if (Flags.isHidden(component, slot) && regex.matcher(slot.getName()).matches()){
+          Flags.remove(component, slot, context, Flags.HIDDEN);
+          logger.fine("Hidden Flag removed from: " + slot);
         }
       }
     }
-
+    @Override
+    public IFuture post (Action action, BValue value, Context context) {
+      if (unhide.equals(action)) {
+        Thread thread = new Thread(() -> doUnhide(context), "UnhiderRegexThread");
+        thread.start();
+      }
+      return null;
+    }
     private static final Logger logger = Logger.getLogger("UnhiderRegex");
 }
