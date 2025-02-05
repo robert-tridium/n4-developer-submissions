@@ -1,0 +1,266 @@
+package com.tridiumuniversity.multiplexer;
+
+import javax.baja.nre.annotations.NiagaraProperty;
+import javax.baja.nre.annotations.NiagaraType;
+import javax.baja.sys.*;
+
+@NiagaraType
+@NiagaraProperty(
+        name="in0",
+        type= "BBoolean",
+        defaultValue="BBoolean.make(false)",
+        flags = Flags.SUMMARY
+)
+
+@NiagaraProperty(
+        name="in1",
+        type= "BBoolean",
+        defaultValue="BBoolean.make(false)",
+        flags = Flags.SUMMARY
+)
+@NiagaraProperty(
+        name="in2",
+        type= "BBoolean",
+        defaultValue="BBoolean.make(false)",
+        flags = Flags.SUMMARY
+)
+@NiagaraProperty(
+        name="in3",
+        type= "BBoolean",
+        defaultValue="BBoolean.make(false)",
+        flags = Flags.SUMMARY
+)
+@NiagaraProperty(
+        name="s0",
+        type= "BBoolean",
+        defaultValue="BBoolean.make(false)",
+        flags = Flags.SUMMARY
+)
+@NiagaraProperty(
+        name="s1",
+        type= "BBoolean",
+        defaultValue="BBoolean.make(false)",
+        flags = Flags.SUMMARY
+)
+@NiagaraProperty(
+        name="out",
+        type= "BBoolean",
+        defaultValue="BBoolean.make(false)",
+        flags = Flags.SUMMARY  | Flags.READONLY
+)
+public class BMultiplexerComp extends BComponent {
+//region /*+ ------------ BEGIN BAJA AUTO GENERATED CODE ------------ +*/
+//@formatter:off
+/*@ $com.tridiumuniversity.multiplexer.BMultiplexerComp(2711808882)1.0$ @*/
+/* Generated Tue Feb 04 20:43:51 EST 2025 by Slot-o-Matic (c) Tridium, Inc. 2012-2025 */
+
+  //region Property "in0"
+
+  /**
+   * Slot for the {@code in0} property.
+   * @see #getIn0
+   * @see #setIn0
+   */
+  public static final Property in0 = newProperty(Flags.SUMMARY, BBoolean.make(false).as(BBoolean.class).getBoolean(), null);
+
+  /**
+   * Get the {@code in0} property.
+   * @see #in0
+   */
+  public boolean getIn0() { return getBoolean(in0); }
+
+  /**
+   * Set the {@code in0} property.
+   * @see #in0
+   */
+  public void setIn0(boolean v) { setBoolean(in0, v, null); }
+
+  //endregion Property "in0"
+
+  //region Property "in1"
+
+  /**
+   * Slot for the {@code in1} property.
+   * @see #getIn1
+   * @see #setIn1
+   */
+  public static final Property in1 = newProperty(Flags.SUMMARY, BBoolean.make(false).as(BBoolean.class).getBoolean(), null);
+
+  /**
+   * Get the {@code in1} property.
+   * @see #in1
+   */
+  public boolean getIn1() { return getBoolean(in1); }
+
+  /**
+   * Set the {@code in1} property.
+   * @see #in1
+   */
+  public void setIn1(boolean v) { setBoolean(in1, v, null); }
+
+  //endregion Property "in1"
+
+  //region Property "in2"
+
+  /**
+   * Slot for the {@code in2} property.
+   * @see #getIn2
+   * @see #setIn2
+   */
+  public static final Property in2 = newProperty(Flags.SUMMARY, BBoolean.make(false).as(BBoolean.class).getBoolean(), null);
+
+  /**
+   * Get the {@code in2} property.
+   * @see #in2
+   */
+  public boolean getIn2() { return getBoolean(in2); }
+
+  /**
+   * Set the {@code in2} property.
+   * @see #in2
+   */
+  public void setIn2(boolean v) { setBoolean(in2, v, null); }
+
+  //endregion Property "in2"
+
+  //region Property "in3"
+
+  /**
+   * Slot for the {@code in3} property.
+   * @see #getIn3
+   * @see #setIn3
+   */
+  public static final Property in3 = newProperty(Flags.SUMMARY, BBoolean.make(false).as(BBoolean.class).getBoolean(), null);
+
+  /**
+   * Get the {@code in3} property.
+   * @see #in3
+   */
+  public boolean getIn3() { return getBoolean(in3); }
+
+  /**
+   * Set the {@code in3} property.
+   * @see #in3
+   */
+  public void setIn3(boolean v) { setBoolean(in3, v, null); }
+
+  //endregion Property "in3"
+
+  //region Property "s0"
+
+  /**
+   * Slot for the {@code s0} property.
+   * @see #getS0
+   * @see #setS0
+   */
+  public static final Property s0 = newProperty(Flags.SUMMARY, BBoolean.make(false).as(BBoolean.class).getBoolean(), null);
+
+  /**
+   * Get the {@code s0} property.
+   * @see #s0
+   */
+  public boolean getS0() { return getBoolean(s0); }
+
+  /**
+   * Set the {@code s0} property.
+   * @see #s0
+   */
+  public void setS0(boolean v) { setBoolean(s0, v, null); }
+
+  //endregion Property "s0"
+
+  //region Property "s1"
+
+  /**
+   * Slot for the {@code s1} property.
+   * @see #getS1
+   * @see #setS1
+   */
+  public static final Property s1 = newProperty(Flags.SUMMARY, BBoolean.make(false).as(BBoolean.class).getBoolean(), null);
+
+  /**
+   * Get the {@code s1} property.
+   * @see #s1
+   */
+  public boolean getS1() { return getBoolean(s1); }
+
+  /**
+   * Set the {@code s1} property.
+   * @see #s1
+   */
+  public void setS1(boolean v) { setBoolean(s1, v, null); }
+
+  //endregion Property "s1"
+
+  //region Property "out"
+
+  /**
+   * Slot for the {@code out} property.
+   * @see #getOut
+   * @see #setOut
+   */
+  public static final Property out = newProperty(Flags.SUMMARY | Flags.READONLY, BBoolean.make(false).as(BBoolean.class).getBoolean(), null);
+
+  /**
+   * Get the {@code out} property.
+   * @see #out
+   */
+  public boolean getOut() { return getBoolean(out); }
+
+  /**
+   * Set the {@code out} property.
+   * @see #out
+   */
+  public void setOut(boolean v) { setBoolean(out, v, null); }
+
+  //endregion Property "out"
+
+  //region Type
+
+  @Override
+  public Type getType() { return TYPE; }
+  public static final Type TYPE = Sys.loadType(BMultiplexerComp.class);
+
+  //endregion Type
+
+//@formatter:on
+//endregion /*+ ------------ END BAJA AUTO GENERATED CODE -------------- +*/
+
+  public void changed(Property prop, Context cx)
+  {
+      if(prop.equals(s0)||prop.equals(s1)||prop.equals(in0)||prop.equals(in1)||prop.equals(in2)||prop.equals(in3))
+      {
+        int indxVal = retStrgForBoolVals(getS0(),getS1());
+        recalcOut(indxVal);
+      }
+  }
+
+  public void recalcOut(int idx)
+  {
+    boolean retVal = false;
+    switch(idx)
+    {
+      case 0:
+        retVal = getIn0();
+        break;
+      case 1:
+        retVal = getIn1();
+        break;
+      case 2:
+        retVal = getIn2();
+        break;
+      case 3:
+        retVal = getIn3();
+        break;
+      default :
+        retVal =  getIn0();
+    }
+    setOut(retVal);
+  }
+  public int retStrgForBoolVals(boolean val1, boolean val2)
+  {
+      String val = (val1==true?"1":"0") +  (val2==true?"1":"0");
+    return Integer.parseInt(val,2);
+
+  }
+}
