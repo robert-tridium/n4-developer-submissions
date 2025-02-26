@@ -22,6 +22,6 @@ Try to implement the behavior described above without reading this section. If y
 6. Run slotomatic with the command `gradlew slotomatic` to generate the slot code for the Properties and Actions.
 7. Define methods named `doTouch()` and `doPrint()` to hold the implementations of the `touch` and `print` Actions.
 8. Add a `<p>` element to the `module.palette` file for `BFile`.
-9. Compile your code with the command `gradlew jar`.
+9. Compile your code with the command `gradlew :myFile-rt:jar`.
 10. Create a new station in Workbench and add a `BFile` component from your palette.
 11. Experiment with changing the Property values and invoking the Actions.
